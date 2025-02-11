@@ -1,89 +1,135 @@
-/* styles/Navbar.module.css */
 .navbar {
-    background-color: #333;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  .navContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1200px;
-    align-items: center;
-  }
-  
-  .logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
+  background-color: #f9f9fa;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100svw;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 110px;
+  /* border-bottom: 1px solid green; */
+}
+
+.logo img {
+  width: 250px;
+  height: auto;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.navLinks li {
+  position: relative;
+}
+
+.navLinks a, .dropbtn {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navLinks a:hover, .dropbtn:hover {
+  background-color: #27b243;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.dropdownMenu li {
+  display: block;
+}
+
+.dropdownMenu li a {
+  color: black;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdownMenu li a:hover {
+  background-color: #27b243;
+  color: rgb(255, 255, 255);
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
   .navLinks {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .navLinks li {
-    position: relative;
-  }
-  
-  .navLinks a, .dropbtn {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 15px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .navLinks a:hover, .dropbtn:hover {
-    background-color: #444;
-    border-radius: 5px;
-  }
-  
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    display: none;
+    flex-direction: column;
     background: white;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 150px;
-    border-radius: 5px;
-    text-align: left;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
   }
-  
-  .dropdownMenu li {
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .navLinks li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navLinks a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  .hamburger {
     display: block;
   }
-  
-  .dropdownMenu li a {
-    color: black;
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .dropdownMenu li a:hover {
-    background: #f4f4f4;
-  }
-  
+}

@@ -38,7 +38,7 @@
   
   /* Individual Team Member */
   .teamMember {
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -55,7 +55,7 @@
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid #52bd18;
+    border: 4px solid #87c963;
   }
   
   .memberTitle {

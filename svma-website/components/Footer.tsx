@@ -1,19 +1,21 @@
-import styles from "../styles/Footer.module.css";
+import Image from "next/image";
 import Link from "next/link";
+import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        <p>
-          For over 10 years, Salinas Valley Medical Aesthetics has been helping people look and feel their best.
-          With a combination of aesthetic treatments, we will help you achieve a natural rejuvenated result.
-        </p>
+      {/* Contact Section */}
+      <div className={styles.footerSection}>
+        <h3>Our Office</h3>
+        <p>📍 30 Central Avenue, Salinas, CA 93901</p>
+        <p>📧 Email: <a href="mailto:Luz.svma@gmail.com">Luz.svma@gmail.com</a></p>
+        <p>📞 Phone: <a href="tel:8319754175">831-975-4175</a></p>
       </div>
-
-      <div className={styles.footerLinks}>
+      {/* Quick Links Section */}
+      <div className={styles.footerSection}>
         <h3>Quick Links</h3>
-        <ul>
+        <ul className={styles.footerLinks}>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About Us</Link></li>
           <li><Link href="/services">Services</Link></li>
@@ -23,11 +25,16 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className={styles.footerContact}>
-        <h3>Our Office</h3>
-        <p>30 Central Avenue<br />Salinas, CA 93901</p>
-        <p>Email: <a href="mailto:Luz.svma@gmail.com">Luz.svma@gmail.com</a></p>
-        <p>Phone: <a href="tel:8319754175">831-975-4175</a></p>
+      {/* Logo Section (Centered) */}
+
+      <div className={`${styles.footerSection} ${styles.logoContainer}`}>
+        <Image
+          src="/images/logoHD.jpeg"
+          alt="SVMA Logo"
+          width={450}
+          height={150}
+          className={styles.logo}
+        />
       </div>
     </footer>
   );

@@ -1,0 +1,93 @@
+/* ===== Home Page Styling ===== */
+.introSection {
+    text-align: center;
+    padding: 50px 20px;
+    /* background: linear-gradient(135deg, #1fb95573, #19a3ffa0); */
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section with Image */
+.aboutSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.aboutContent {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.aboutImage img {
+    background-color: transparent;
+}
+
+/* Services Section with Images */
+.servicesSection {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1fb95573, #19a3ffa0);
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    margin: 60px auto;
+    max-width: 1000px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.serviceCard {
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.serviceCard a {
+    display: inline-block;
+    background: #1fa3ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.serviceImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .aboutSection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,200 @@
+/* ===== Contact Page Styling ===== */
+
+.contactContainer {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Left Column - Contact Info */
+.contactInfo {
+    padding: 30px;
+    background: linear-gradient(135deg, #1fb95560, #19a3ff5a);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contactInfo h1 {
+    font-size: 2.8rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.contactInfo h2 {
+    font-size: 1.6rem;
+    color: #222;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.contactInfo p {
+    font-size: 1.2rem;
+    color: #030101;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* Contact Details with Icons */
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactDetails p {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #222;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Google Maps */
+.mapContainer {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Column - Office Hours + Contact Form */
+.contactRight {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Office Hours Section */
+.officeHours {
+    background: linear-gradient(135deg, #1fb95560, #19a3ff5a);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.officeHours h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.officeHours p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+/* ===== Form Styling ===== */
+.contactFormContainer {
+    background: linear-gradient(135deg, #1fb95560, #19a3ff5a);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contactFormContainer:hover {
+    transform: translateY(-5px);
+}
+
+.contactForm h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contactForm label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease-in-out;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+    border: 1px solid #7fd9ff;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Submit Button */
+.contactForm button {
+    background: linear-gradient(135deg, #2265d2, #1bd1ff);
+    color: white;
+    border: 1px solid black;
+    padding: 14px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contactForm button:hover {
+    background: linear-gradient(135deg, #5cb8db, #3793c4);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .contactContainer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contactInfo h1 {
+        text-align: center;
+    }
+
+    .contactRight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactFormContainer {
+        margin-top: 20px;
+    }
+
+    .mapContainer {
+        height: 250px;
+    }
+
+    .officeHours {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
