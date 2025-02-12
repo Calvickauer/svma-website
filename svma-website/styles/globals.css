@@ -1,67 +1,119 @@
 /* General Styles */
+
+/* Import Cool & Professional Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400;700&family=Raleway:wght@400;700&family=Cinzel:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif; /* Main font for body text */
+}
+
+/* Headings get a luxury + modern font combo */
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif; /* Luxury + clean */
+    font-weight: 700;
+}
+
+/* Optional: Apply Raleway for a more modern, sleek look */
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+/* Optional: Apply Cinzel for a high-end elegant feel */
+h2, h3, li {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+}
+
+/* ===== Layout & Page Fixes ===== */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background: #f9f9f9;
-  }
-  
-  /* Container to prevent content from being covered by navbar */
-  .appContainer {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-top: 80px; /* Ensure navbar does not overlap content */
-  }
+    width: 100%; /* Fix horizontal scroll issue */
+    max-width: 100vw;
+    overflow-x: hidden; /* Ensuring no horizontal scroll */
+}
 
-  
-  main {
-    flex: 1;
-    padding-top: 60px; /* Pushes content down so it doesn't go under navbar */
-    margin: auto;
-    text-align: center;
-  }
-  
-  /* ====== FOOTER STYLING ====== */
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    margin-top: auto;
-    width: 100svw;
-  }
-  
-  .footerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100svw;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Quick Links */
-  .footerLinks {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-  }
-  
-  .footerLinks a {
-    color: white;
+/* Improve text spacing */
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Ensure smooth rendering */
+* {
+    box-sizing: border-box;
+}
+
+/* Enhance links for better visibility */
+a {
     text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .footerLinks a:hover {
+    color: rgb(59, 79, 255);
+    font-weight: 500;
+}
+
+a:hover {
     text-decoration: underline;
-  }
-  
-  /* Contact Info */
-  .footerContact {
-    margin-top: 15px;
-    font-size: 13px;
-  }
-  
+}
+
+/* Button Styling */
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Container to prevent content from being covered by navbar */
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Fixes width issues */
+  max-width: 100vw;
+  min-height: 100vh;
+  padding-top: 60px; /* Prevents navbar from overlapping content */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Ensuring full responsiveness */
+}
+
+/* Fix layout centering */
+main {
+  flex: 1;
+  padding-top: 40px;
+  text-align: center;
+  max-width: 100%;
+}
+
+/* ====== FOOTER STYLING ====== */
+footer {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 14px;
+  margin-top: auto;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Contact Info */
+.footerContact {
+  margin-top: 15px;
+  font-size: 13px;
+}

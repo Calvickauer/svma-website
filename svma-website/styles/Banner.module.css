@@ -3,22 +3,24 @@
         transform: scale(1);
     }
     to {
-        transform: scale(1.1); /* Slight zoom-in */
+        transform: scale(1.5); /* Slight zoom-in */
     }
 }
 
+/* Banner Container */
 .banner {
     width: 100vw;
-    height: 350px; /* Adjust height as needed */
+    height: 350px; /* Default for Desktop */
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden; /* Prevents overflow issues */
+    overflow: hidden;
 }
 
+/* Zoom Effect */
 .banner::before {
     content: "";
     position: absolute;
@@ -30,9 +32,10 @@
     animation: slowZoom 6s ease-in-out forwards;
 }
 
+/* Dark Overlay */
 .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-    width: 100svw;
+    background: rgba(0, 0, 0, 0.5); /* Ensures text readability */
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -42,10 +45,46 @@
     left: 0;
 }
 
+/* Title Styling */
 .bannerTitle {
     color: white;
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* Adjusted for responsiveness */
     font-weight: bold;
     text-align: center;
-    position: relative; /* Ensures title stays visible above zoom effect */
+    position: relative; /* Keeps it above zoom effect */
+    padding: 10px;
+    max-width: 90%;
+    word-break: break-word;
+}
+
+/* 📱 Mobile & Tablet Responsive Adjustments */
+@media (max-width: 1024px) { /* Tablet View */
+    .banner {
+        height: 280px; /* Slightly smaller for tablets */
+        width: 100vw;
+    }
+    .bannerTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) { /* Large Mobile View */
+    .banner {
+        height: 250px;
+        width: 100vw;
+    }
+    .bannerTitle {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) { /* iPhone View */
+    .banner {
+        height: 220px; /* Slightly smaller */
+        width: 100vw;
+    }
+    .bannerTitle {
+        font-size: 1.8rem;
+        padding: 5px;
+    }
 }

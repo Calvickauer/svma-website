@@ -1,35 +1,73 @@
+@keyframes slowZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2); /* Slight zoom-in */
+    }
+}
+
+/* Ensure full-width display and prevent horizontal scroll */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents any horizontal overflow */
+}
+
+/* General container fix for centering */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* ===== Home Page Styling ===== */
 .introSection {
     text-align: center;
     padding: 50px 20px;
-    /* background: linear-gradient(135deg, #1fb95573, #19a3ffa0); */
+    max-width: 95%;
+    width: 100%;
     color: rgb(0, 0, 0);
     border-radius: 15px;
-    margin: 40px auto;
-    max-width: 1000px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* About Section with Image */
 .aboutSection {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 95svw;
+    width: 95%;
     margin: 60px auto;
     padding: 40px 20px;
     background: #fff;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .aboutContent {
     flex: 1;
     padding-right: 20px;
+    text-align: center;
 }
 
 .aboutImage img {
+    padding-top: 20px;
+    margin: auto;
     background-color: transparent;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    animation: slowZoom 3s ease-in-out forwards;
 }
 
 /* Services Section with Images */
@@ -40,18 +78,25 @@
     color: rgb(0, 0, 0);
     border-radius: 15px;
     margin: 60px auto;
-    max-width: 1000px;
+    max-width: 1100px;
+    text-align: center;
+    width: 95%;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
+/* Services Grid */
 .servicesGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 900px;
+    width: 95%;
     margin: auto;
+    box-sizing: border-box;
 }
 
+/* Individual Service Card */
 .serviceCard {
     background: white;
     color: #333;
@@ -60,8 +105,10 @@
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
+/* Service Links */
 .serviceCard a {
     display: inline-block;
     background: #1fa3ff;
@@ -73,18 +120,23 @@
     transition: background 0.3s ease;
 }
 
+/* Image Styling */
 .serviceImage {
-    width: 100%;
+    margin: auto;
+    width: 50%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
+    display: block;
 }
 
-/* Responsive Design */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     .aboutSection {
         flex-direction: column;
         text-align: center;
+        padding: 30px 15px;
+        width: 95%;
     }
 
     .servicesGrid {

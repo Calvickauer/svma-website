@@ -7,14 +7,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       {/* Contact Section */}
       <div className={styles.footerSection}>
-        <h3>Our Office</h3>
+        <h2>Our Office</h2>
         <p>📍 30 Central Avenue, Salinas, CA 93901</p>
         <p>📧 Email: <a href="mailto:Luz.svma@gmail.com">Luz.svma@gmail.com</a></p>
         <p>📞 Phone: <a href="tel:8319754175">831-975-4175</a></p>
       </div>
       {/* Quick Links Section */}
       <div className={styles.footerSection}>
-        <h3>Quick Links</h3>
+        <h2>Quick Links</h2>
         <ul className={styles.footerLinks}>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About Us</Link></li>

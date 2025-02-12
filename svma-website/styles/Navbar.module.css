@@ -9,13 +9,14 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  height: 110px;
+  height: 140px;
   /* border-bottom: 1px solid green; */
 }
 
 .logo img {
   width: 250px;
   height: auto;
+  padding: 3px;
 }
 
 .navContainer {
@@ -42,11 +43,11 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-left: auto;
 }
 
 .navLinks li {
   position: relative;
+  width: 100%;
 }
 
 .navLinks a, .dropbtn {
@@ -60,9 +61,9 @@
 }
 
 .navLinks a:hover, .dropbtn:hover {
-  background-color: #27b243;
+  background-color: rgb(202, 227, 117);
   border-radius: 5px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 /* Dropdown Styles */
@@ -74,14 +75,16 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
+  background: #e3e3e3;
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   min-width: 150px;
   border-radius: 5px;
   text-align: left;
+  z-index: 2000;
 }
 
 .dropdownMenu li {
@@ -97,8 +100,27 @@
 }
 
 .dropdownMenu li a:hover {
-  background-color: #27b243;
-  color: rgb(255, 255, 255);
+  background-color: rgb(202, 227, 117);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+}
+
+/* Stacking links into 3 rows before switching to hamburger */
+@media (max-width: 1300px) {
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navLinks li {
+    flex: 1 1 calc(5.33% - 10px); /* 3 items per row */
+    text-align: center;
+    max-width: 400px; /* Prevents overly wide links */
+  }
 }
 
 /* Mobile Navbar */
@@ -106,12 +128,13 @@
   .navLinks {
     display: none;
     flex-direction: column;
-    background: white;
+    background: #e3e3e3;
     position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
+    top: 140px;
+    left: 20%;
+    width: 60svw;
     padding: 10px 0;
+    margin: auto;
   }
 
   .navLinks.open {
@@ -120,7 +143,6 @@
 
   .navLinks li {
     text-align: center;
-    width: 100%;
   }
 
   .navLinks a {

@@ -15,7 +15,7 @@
 /* Left Column - Contact Info */
 .contactInfo {
     padding: 30px;
-    background: linear-gradient(135deg, #1fb95560, #19a3ff5a);
+    background: linear-gradient(85deg, rgb(202, 227, 117), rgb(162, 184, 83));
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
