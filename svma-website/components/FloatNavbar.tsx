@@ -7,10 +7,24 @@ import styles from "../styles/FloatingNavbar.module.css";
 export default function FloatingNavbar() {
   const { toggleLanguage, isSpanish } = useTranslation();
   const [hydrated, setHydrated] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setHydrated(true);
+
+    // Check screen width and update state
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 800);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  // Hide navbar if screen width is >= 800px
+  if (!isMobile) return null;
 
   return (
     <div className={styles.floatingNavbar}>

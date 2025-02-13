@@ -1,4 +1,5 @@
-import Banner from "../components/Banner";
+import React from "react";
+import MeetTheTeam from "../pages/meet-the-team"; // Import MeetTheTeam
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,45 +10,42 @@ export default function Home() {
 
   return (
     <div>
-      <Banner title={registerText("homeTitle", "Salinas Valley Medical Aesthetics")} imageUrl="/images/Home.jpg" />
+      {/* Hero Section with Background Image */}
+      <section className={styles.heroSection}>
+        <Image
+          src="/images/Storefront2.jpeg"
+          alt="Salinas Valley Medical Aesthetics Storefront"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+        <div className={styles.heroOverlay}>
+          <Link href="/contact">
+            <button className={styles.heroButton}>{registerText("contact", "Contact")}</button>
+          </Link>
+          <Link href="/promotions">
+            <button className={styles.heroButton}>{registerText("promotions", "Current Promotions")}</button>
+          </Link>
+        </div>
+      </section>
 
       {/* Introduction Section */}
       <section className={styles.introSection}>
         <h2>{registerText("locationTitle", "SVMA Located in Salinas, CA")}</h2>
         <p>{registerText("intro1", "Salinas Valley Medical Aesthetics is a highly respected aesthetics practice, serving the community for over 12 years.")}</p>
         <p>{registerText("intro2", "The SVMA team focuses on natural-looking aesthetic care that highlights your unique features, while gently enhancing your natural beauty.")}</p>
+        <p>
+          {registerText("about1", "Our experienced providers can recommend a wide range of treatments including ")}
+          <strong>{registerText("about2", "Botox®, CoolSculpting®, Juvéderm®, microneedling, and laser services")}</strong>.
+        </p>
+        <p>{registerText("about3", "Treatment plans are fully customized to leave you looking refreshed, rejuvenated, and youthful.")}</p>
+        <p>{registerText("about4", "The best results are undetectable and natural.")}</p>
         <div className={styles.aboutImage}>
           <Image src="/images/Crew.png" alt="Our Clinic" width={500} height={350} />
         </div>
       </section>
 
-      {/* About Us Section with Image */}
-      <section className={styles.aboutSection}>
-        <div className={styles.aboutContent}>
-          <p>
-            {registerText(
-              "about1",
-              "Our experienced providers can recommend a wide range of treatments including "
-            )}
-            <strong>
-              {registerText("about2", "Botox®, CoolSculpting®, Juvéderm®, microneedling, and laser services")}
-            </strong>.
-          </p>
-          <p>{registerText("about3", "Treatment plans are fully customized to leave you looking refreshed, rejuvenated, and youthful.")}</p>
-          <p>{registerText("about4", "The best results are undetectable and natural.")}</p>
-          <p>
-            {registerText(
-              "about5",
-              "The Salinas Valley Medical Aesthetics team understands that aesthetic care is about much more than just looking good—it’s about feeling good and confident."
-            )}
-          </p>
-          <p className={styles.callToAction}>
-            {registerText("about6", "To get expert-level care in a friendly, supportive, and welcoming environment, call our office to schedule an appointment today.")}
-          </p>
-        </div>
-      </section>
-
-      {/* Our Services Section with Images */}
+      {/* Our Services Section */}
       <section className={styles.servicesSection}>
         <h2>{registerText("servicesTitle", "Our Services")}</h2>
         <div className={styles.servicesGrid}>
@@ -68,6 +66,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Meet the Team Section */}
+      <MeetTheTeam />
     </div>
   );
 }

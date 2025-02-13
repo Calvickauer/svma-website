@@ -62,13 +62,27 @@
     border-radius: 8px;
 }
 
-/* Google Maps */
+/* Map Container (Replaces Google Maps) */
 .mapContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Map Images */
+.mapImage {
     width: 100%;
-    height: 300px;
+    max-width: 400px;
+    height: auto;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.mapImage:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Right Column - Office Hours + Contact Form */
@@ -80,7 +94,7 @@
 
 /* Office Hours Section */
 .officeHours {
-    background: linear-gradient(135deg, #1fb95560, #19a3ff5a);
+    background: linear-gradient(85deg, rgb(202, 227, 117), rgb(162, 184, 83));
     padding: 20px;
     border-radius: 12px;
     text-align: center;
@@ -102,7 +116,7 @@
 
 /* ===== Form Styling ===== */
 .contactFormContainer {
-    background: linear-gradient(135deg, #1fb95560, #19a3ff5a);
+    background: linear-gradient(85deg, rgb(202, 227, 117), rgb(162, 184, 83));
     padding: 30px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -168,6 +182,41 @@
     transform: scale(1.05);
 }
 
+/* ===== Instagram Link Styling ===== */
+.instagramLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #222;
+    background: rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.instagramLink a {
+    display: flex;
+    align-items: center;
+    color: #E1306C; /* Instagram Pink */
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.instagramLink a:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.instagramIcon {
+    font-size: 28px;
+    color: #E1306C; /* Instagram Color */
+}
+
+
 /* Responsive Design */
 @media (max-width: 900px) {
     .contactContainer {
@@ -190,11 +239,18 @@
     }
 
     .mapContainer {
-        height: 250px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mapImage {
+        max-width: 90%;
+        border: 1px solid rgb(255, 255, 255);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
     }
 
     .officeHours {
         width: 100%;
         margin-bottom: 20px;
-    }
-}
+        margin-top: 20px;
+}}

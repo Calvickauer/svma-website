@@ -13,6 +13,7 @@
     height: 350px; /* Default for Desktop */
     background-size: cover;
     background-position: center;
+    margin-top: 13%;
     display: flex;
     align-items: center;
     justify-content: center;

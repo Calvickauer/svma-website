@@ -7,6 +7,17 @@
     }
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Ensure full-width display and prevent horizontal scroll */
 html, body {
     margin: 0;
@@ -22,6 +33,96 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* ===== Hero Section ===== */
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 100svh; /* Full screen height */
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+.heroSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay */
+    z-index: 1;
+}
+
+/* Background Image */
+.heroSection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: slowZoom 10s ease-in-out infinite alternate;
+}
+
+/* Hero Text */
+.heroText {
+    position: absolute;
+    margin-top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    z-index: 2;
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+.heroTitle {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.heroSubtitle {
+    font-size: 1.1rem;
+    font-weight: normal;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    line-height: 1.4;
+    color: white;
+}
+
+/* Overlay with Buttons */
+.heroOverlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+}
+
+/* Hero Buttons */
+.heroButton {
+    background: rgba(162, 184, 83, 0.95);
+    border: 0.5px solid #000000;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.heroButton:hover {
+    background: #a2b853;
+    color: rgb(0, 0, 0);
 }
 
 /* ===== Home Page Styling ===== */
@@ -58,6 +159,7 @@ html, body {
     flex: 1;
     padding-right: 20px;
     text-align: center;
+    margin-top: 80px;
 }
 
 .aboutImage img {
@@ -70,11 +172,11 @@ html, body {
     animation: slowZoom 3s ease-in-out forwards;
 }
 
-/* Services Section with Images */
+/* ===== Services Section ===== */
 .servicesSection {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(135deg, #1fb95573, #19a3ffa0);
+    background: linear-gradient(140deg, rgba(201, 227, 117, 0.827), rgb(162, 184, 83));
     color: rgb(0, 0, 0);
     border-radius: 15px;
     margin: 60px auto;
@@ -111,10 +213,11 @@ html, body {
 /* Service Links */
 .serviceCard a {
     display: inline-block;
-    background: #1fa3ff;
-    color: white;
+    background: rgb(162, 184, 83);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10%;
+    color: rgb(0, 0, 0);
     padding: 10px 15px;
-    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease;
@@ -130,13 +233,43 @@ html, body {
     display: block;
 }
 
+
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+    .heroText {
+        top: 20%;
+        width: 90%;
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.2rem;
+    }
+
+    .heroOverlay {
+        flex-direction: column;
+        top: 25%;
+    }
+
     .aboutSection {
         flex-direction: column;
         text-align: center;
         padding: 30px 15px;
         width: 95%;
+    }
+
+    .heroOverlay {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .heroButton {
+        width: 80%;
+        text-align: center;
+        font-size: 16px;
     }
 
     .servicesGrid {

@@ -1,5 +1,8 @@
 import Banner from "../components/Banner"; // Import the Banner component
 import styles from "../styles/Contact.module.css"; // Import styles
+import Image from "next/image";
+import Link from "next/link";
+import { FaInstagram } from "react-icons/fa"; // Import Instagram Icon
 
 export default function Contact() {
   return (
@@ -15,37 +18,36 @@ export default function Contact() {
 
           <h2>Contact Information</h2>
           <div className={styles.contactDetails}>
-            <p><i className="fas fa-envelope"></i> Email: <a href="mailto:Luz.svma@gmail.com">Luz.svma@gmail.com</a></p>
-            <p><i className="fas fa-phone"></i> Phone: <a href="tel:8319754175">831-975-4175</a></p>
+            <p>📧 Email: <a href="mailto:Luz.svma@gmail.com">Luz.svma@gmail.com</a></p>
+            <p>📞 Phone: <a href="tel:8319754175">831-975-4175</a></p>
+
+            {/* Instagram Link */}
+            <div className={styles.instagramLink}>
+              <Link href="https://www.instagram.com/svmedaesthetics" target="_blank">
+                <FaInstagram className={styles.instagramIcon} />
+                <span>Follow us on Instagram</span>
+              </Link>
+            </div>
           </div>
-          <h2>Our Office</h2>
-          <p>📍 <strong>30 Central Avenue, Salinas, CA 93901</strong></p>
 
-
-          {/* Google Maps */}
-          <div className={styles.mapContainer}>
-            <iframe
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style={{ border: 0 }}
-              src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=30+Central+Avenue,Salinas,CA"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
-        {/* Right Section - Office Hours + Contact Form */}
-        <div className={styles.contactRight}>
-          {/* Office Hours */}
           <div className={styles.officeHours}>
             <h2>Office Hours</h2>
             <p>Hours by appointment only. Please call in advance as hours may vary.</p>
             <p><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</p>
             <p><strong>Saturday & Sunday:</strong> Closed</p>
           </div>
+          <p>📍 <strong>30 Central Avenue, Salinas, CA 93901</strong></p>
 
-          {/* Contact Form */}
+          {/* Map Images Section (Replaces Google Maps) */}
+          <div className={styles.mapContainer}>
+            <Link href="https://beta.maps.apple.com/?address=30+Central+Ave%2C+Salinas%2C+CA+93901%2C+United+States&ll=36.6769893%2C-121.6569679&q=30+Central+Ave" target="_blank">
+              <Image src="/images/Map.jpg" alt="Location Map" width={500} height={350} className={styles.mapImage} />
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Section - Contact Form */}
+        <div className={styles.contactRight}>
           <div className={styles.contactFormContainer}>
             <h2>Get in Touch</h2>
             <form className={styles.contactForm}>
